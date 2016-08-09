@@ -9,7 +9,15 @@ app.controller('portfolio', function ($scope) {
             blogs: "views/blogs.html"
         };
 
-        $scope.temp=$scope.template.experience;
+        $scope.temp = $scope.template.experience;
+
+        $scope.try = function () {
+            classie.remove(splitlayout, 'close-right');
+            classie.remove(splitlayout, 'close-left');
+            classie.remove(splitlayout, 'reset-layout');
+            classie.add(splitlayout, 'open-left');
+
+        }
 
     }
 )
