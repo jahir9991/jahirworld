@@ -69,6 +69,7 @@ body {
 
 /* Intro content, profile image and name, back button */
 .intro-content {
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -94,18 +95,30 @@ body {
   opacity: 0.6;
 }
 
+.intro-content .list {
+  //width: 100%;
+  //  height: 55px;
+  background: #fff;
 
-.intro-content h1 > span {
+  //font-weight: 200;
+  font-size: 2em;
+  display: block;
+  white-space: nowrap;
+  color: #47a3da;
+
+}
+
+.intro-content h1  {
   display: block;
   white-space: nowrap;
 }
 
-.intro-content h1 > span:first-child {
+.intro-content h1 :first-child {
   font-weight: 300;
   font-size: 2em;
 }
 
-.intro-content h1 > span:nth-child(2) {
+.intro-content h1 :nth-child(2) {
   position: relative;
   margin-top: 0.5em;
   padding: 0.8em;
@@ -114,7 +127,7 @@ body {
   font-size: 0.8em;
 }
 
-.intro-content h1 > span:nth-child(2):before {
+.intro-content h1 :nth-child(2):before {
   position: absolute;
   top: 0;
   left: 25%;
@@ -124,7 +137,7 @@ body {
   content: '';
 }
 
-.side-right .intro-content h1 > span:nth-child(2):before {
+.side-right .intro-content h1 :nth-child(2):before {
   background: #47a3da;
 }
 
@@ -144,11 +157,11 @@ body {
   opacity: 0;
   pointer-events: none;
 
-
 }
 
 .mobile-layout .back { /* fixed positioning will make this not clickable after scrolling on some mobile devices */
   position: absolute;
+
 }
 
 .back-left {
@@ -156,7 +169,7 @@ body {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background: #fff;
-   color: #47a3da;
+  color: #47a3da;
 }
 
 .back-right {
@@ -165,7 +178,6 @@ body {
   transform: translateX(50%);
   color: #fff;
   background: #47a3da;
-
 
 }
 
@@ -363,21 +375,25 @@ body {
   .open-right .side-right {
     -webkit-transform: translateX(-175%);
     transform: translateX(-175%);
+    overflow: hidden;
   }
 
   .open-right .side-left {
     -webkit-transform: translateX(-100%) scale(.7);
     transform: translateX(-100%) scale(.7);
+    overflow: hidden;
   }
 
   .open-left .side-right {
     -webkit-transform: translateX(100%) scale(.7);
     transform: translateX(100%) scale(.7);
+    overflow: hidden;
   }
 
   .open-left .side-left {
     -webkit-transform: translateX(175%);
     transform: translateX(175%);
+    overflow: hidden;
   }
 
   .page {
@@ -401,6 +417,7 @@ body {
     top: 100%;
     -webkit-transform: translateY(-150px) translateX(-12.5%) scale(0.5);
     transform: translateY(-150px) translateX(-12.5%) scale(0.5);
+    overflow: hidden;
   }
 
   .open-left .side-left .intro-content {
@@ -413,6 +430,19 @@ body {
   .open-left .intro-content h1 {
     opacity: 0;
   }
+  .open-right .intro-content .list >h1
+  {
+    opacity: 9;
+    font-size: inherit;
+    width: inherit;
+  }
+.open-right .intro-content .list
+  {
+
+    //width: 80%;
+
+  overflow: hidden;
+}
 
   .back-left {
     left: 6.25%;
@@ -430,6 +460,7 @@ body {
   }
   .intro-content {
     font-size: 50%;
+
   }
 }
 

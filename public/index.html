@@ -45,18 +45,25 @@
                 </header>
                 <div class="intro-content">
                     <div class="profile"><img src="img/raju.jpg" alt="profile1"></div>
-                    <h1><span>MD JAHIR  ALAM </span><span>Web Developer</span></h1>
+                    <h1>MD JAHIR ALAM </h1>
+                    <h1>Web Developer</h1>
                 </div>
                 <div class="overlay"></div>
             </div>
             <div class="side side-right">
                 <div class="intro-content">
 
-                    <h1><a ng-click="temp=template.experience;myVar='open-right';" ng-href="#experience">Experience</a>
-                    </h1>
+                    <a class="list" ng-click="temp=template.experience;myVar='open-right';" ng-href="#experience">
+                        <h1> Experience </h1>
+                    </a>
 
-                    <h1><a ng-click="temp=template.works;myVar='open-right';" ng-href="#works">Works </a></h1>
-                    <h1><a ng-click="temp=template.blogs;myVar='open-right';" ng-href="#blogs">Blogs </a></h1>
+                    <a class="list" ng-click="temp=template.works;myVar='open-right';" ng-href="#works">
+                        <h1>Works</h1>
+                    </a>
+
+                    <a class="list" ng-click="temp=template.blogs;myVar='open-right';" ng-href="#blogs">
+                        <h1>Blogs </h1>
+                    </a>
                 </div>
                 <div class="overlay"></div>
             </div>
@@ -72,6 +79,7 @@
            ng-click="myVar='close-left'">&rarr;</a>
         <a href="#" class="back back-left" title="back to Home" ng-click="myVar='close-right'">&larr;</a>
     </div><!-- /splitlayout -->
+
 
 </div>
 
