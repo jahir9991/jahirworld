@@ -55,6 +55,10 @@
             reset();
             classie.add(splitlayout, 'open-right');
         });
+        // rightSide.querySelector('.introgs').addEventListener(eventtype, function (ev) {
+        //     reset();
+        //     classie.add(splitlayout, 'open-left');
+        // });
 
         // back to intro
         // after transition ends:
