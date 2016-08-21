@@ -1,0 +1,802 @@
+html, body, .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  background: #ecf0f1;
+}
+
+.splitlayout {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+/* Intro sides */
+
+.side {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+}
+
+.open-left .side, .open-right .side {
+  cursor: default;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 499;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.side-left .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.side-right .overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.side-left {
+  left: 0;
+  //background: #47a3da;
+  background: black;
+  color: #fff;
+  outline: 1px solid #47a3da;
+  /* avoid gap */
+}
+
+.side-right {
+  right: 0;
+  background: #47a3da;
+  color: #fff;
+  outline: 1px solid #fff;
+  /* avoid gap */
+}
+
+/* Intro content, profile image and name, back button */
+
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 1em;
+  width: 50%;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.profile {
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  //background: #47a3da;
+  img {
+    max-width: 100%;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+}
+
+.intro-content {
+  .list {
+    //width: 100%;
+    //  height: 55px;
+    background: #fff;
+    //font-weight: 200;
+    font-size: 2em;
+    display: block;
+    white-space: nowrap;
+    color: #47a3da;
+  }
+  h1 {
+    display: block;
+    white-space: nowrap;
+    :first-child {
+      font-weight: 300;
+      font-size: 2em;
+    }
+    :nth-child(2) {
+      position: relative;
+      margin-top: 0.5em;
+      padding: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background: #fff;
+        content: '';
+      }
+    }
+  }
+}
+
+.side-right .intro-content h1 :nth-child(2):before {
+  background: #47a3da;
+}
+
+.back {
+  position: fixed;
+  top: 2.6em;
+  z-index: 500;
+  display: block;
+  visibility: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #47a3da;
+  text-align: center;
+  font-size: 22px;
+  line-height: 44px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-layout .back {
+  /* fixed positioning will make this not clickable after scrolling on some mobile devices */
+  position: absolute;
+}
+
+.back-left {
+  left: 12.5%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: #fff;
+  color: #47a3da;
+}
+
+.back-right {
+  right: 12.5%;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  color: #fff;
+  background: #47a3da;
+}
+
+.open-right .back-left, .open-left .back-right {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  pointer-events: auto;
+  border: #fff 3px solid;
+}
+
+.back:hover {
+  color: #ddd;
+}
+
+/* Pages */
+
+.page {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  min-height: 100%;
+  width: 75%;
+  height: auto;
+  font-size: 1.4em;
+  -webkit-backface-visibility: hidden;
+}
+
+.page-right {
+  left: 25%;
+  outline: 5px solid #ecf0f1;
+  /* avoid rounding gaps */
+  background: #ecf0f1;
+  color: #97a8b2;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.page-left {
+  left: 0;
+  outline: 5px solid #ecf0f1;
+  /* avoid rounding gaps */
+  background: #ecf0f1;
+  color: #97a8b2;
+  text-align: right;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  height: 100%;
+}
+
+/* Inner page content */
+
+.page-inner {
+  padding: 2em;
+  section {
+    padding-bottom: 1em;
+  }
+  h2 {
+    margin: 0 0 1em 0;
+    font-weight: 300;
+    font-size: 2.4em;
+  }
+  p {
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+}
+
+/* All transitions */
+
+.side, .page {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.overlay {
+  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.1s 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.1s 0.5s ease-in-out;
+}
+
+.intro-content {
+  -webkit-transition: -webkit-transform 0.5s ease-in-out, top 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+  h1 {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.back {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Open and close */
+
+/* We need to set the position and overflow for the respective page scroll */
+
+.reset-layout .page {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+}
+
+.splitlayout {
+  &.open-right .page-left, &.open-left .page-right, &.close-right .page-left, &.close-left .page-right {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+  }
+  &.open-right .page-right, &.open-left .page-left {
+    position: relative;
+    overflow: auto;
+    height: auto;
+  }
+}
+
+.open-right .side-left .overlay, .open-left .side-right .overlay {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Right side open */
+
+.open-right {
+  .side-left {
+    -webkit-transform: translateX(-60%) scale(0.5);
+    transform: translateX(-60%) scale(0.5);
+  }
+  .side-right {
+    z-index: 200;
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+}
+
+.close-right .side-right {
+  z-index: 200;
+}
+
+.open-right {
+  .side-right .intro-content {
+    -webkit-transform: translateY(-50%) translateX(0%) scale(0.6);
+    transform: translateY(-50%) translateX(0%) scale(0.6);
+  }
+  .page-right {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+/* Left side open */
+
+.open-left {
+  .side-right {
+    -webkit-transform: translateX(60%) scale(0.5);
+    transform: translateX(60%) scale(0.5);
+  }
+  .side-left {
+    z-index: 200;
+    -webkit-transform: translateX(150%);
+    transform: translateX(150%);
+  }
+}
+
+.close-left .side-left {
+  z-index: 200;
+}
+
+.open-left {
+  .side-left .intro-content {
+    -webkit-transform: translateY(-50%) translateX(-100%) scale(0.6);
+    transform: translateY(-50%) translateX(-100%) scale(0.6);
+  }
+  .codropsheader {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s, visibility 0.1s 0.3s;
+    transition: opacity 0.3s, visibility 0.1s 0.3s;
+  }
+  .page-left {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 83em) {
+  .intro-content {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 58em) {
+  body {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 49.4375em) {
+  .open-right {
+    .side-right {
+      -webkit-transform: translateX(-175%);
+      transform: translateX(-175%);
+      overflow: hidden;
+    }
+    .side-left {
+      -webkit-transform: translateX(-100%) scale(0.7);
+      transform: translateX(-100%) scale(0.7);
+      overflow: hidden;
+    }
+  }
+  .open-left {
+    .side-right {
+      -webkit-transform: translateX(100%) scale(0.7);
+      transform: translateX(100%) scale(0.7);
+      overflow: hidden;
+    }
+    .side-left {
+      -webkit-transform: translateX(175%);
+      transform: translateX(175%);
+      overflow: hidden;
+    }
+  }
+  .page {
+    width: 100%;
+  }
+  .page-right {
+    left: 0;
+    padding-left: 15%;
+  }
+  .page-left {
+    padding-right: 15%;
+  }
+  .intro-content {
+    width: 100%;
+  }
+  .open-right .side-right .intro-content {
+    top: 100%;
+    -webkit-transform: translateY(-150px) translateX(-12.5%) scale(0.5);
+    transform: translateY(-150px) translateX(-12.5%) scale(0.5);
+    overflow: hidden;
+  }
+  .open-left .side-left .intro-content {
+    top: 100%;
+    -webkit-transform: translateY(-150px) translateX(-87.5%) scale(0.5);
+    transform: translateY(-150px) translateX(-87.5%) scale(0.5);
+  }
+  .open-right .intro-content h1, .open-left .intro-content h1 {
+    opacity: 0;
+  }
+  .open-right .intro-content .list {
+    > h1 {
+      opacity: 9;
+      font-size: inherit;
+      width: inherit;
+    }
+    //width: 80%;
+    overflow: hidden;
+  }
+  .back-left {
+    left: 6.25%;
+  }
+  .back-right {
+    right: 6.25%;
+  }
+}
+
+@media screen and (max-width: 42.5em) {
+  body {
+    font-size: 80%;
+  }
+  .intro-content {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-height: 41.125em) {
+  .intro-content {
+    -webkit-transform: translateY(-25%) translateX(-50%);
+    transform: translateY(-25%) translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 39.375em) {
+  .intro-content .profile {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 70%;
+  }
+}
+
+/* General Blueprint Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url('../fonts/fontawesome.eot');
+  src: url('../fonts/fontawesome.eot?#iefix') format("embedded-opentype"), url('../fonts/fontawesome.svg#fontawesome') format("svg"), url('../fonts/fontawesome.woff') format("woff"), url('../fonts/fontawesome.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &:after, &:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+body, html {
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix {
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+body {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  color: #47a3da;
+}
+
+a {
+  color: #f0f0f0;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+  }
+}
+
+.main {
+  width: 95%;
+  max-width: 69em;
+  margin: 0 auto;
+  padding: 0 1.875em 3.125em;
+}
+
+.container > header {
+  width: 95%;
+  max-width: 69em;
+  margin: 0 auto;
+  padding: 0 1.875em 3.125em;
+  padding: 2.875em 1.875em 1.875em;
+  h1 {
+    font-size: 2.125em;
+    line-height: 1.3;
+    margin: 0;
+    float: left;
+    font-weight: 400;
+  }
+  span {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    padding: 0 0 0.6em 0.1em;
+  }
+  nav {
+    float: right;
+    a {
+      display: block;
+      float: left;
+      position: relative;
+      width: 2.5em;
+      height: 2.5em;
+      background: #fff;
+      border-radius: 50%;
+      color: transparent;
+      margin: 0 0.1em;
+      border: 4px solid #47a3da;
+      text-indent: -8000px;
+      &:after {
+        content: attr(data-info);
+        color: #47a3da;
+        position: absolute;
+        width: 600%;
+        top: 120%;
+        text-align: right;
+        right: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+        background: #47a3da;
+      }
+    }
+  }
+}
+
+.icon-drop:before, .icon-arrow-left:before {
+  font-family: 'fontawesome';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2;
+  text-align: center;
+  color: #47a3da;
+  -webkit-font-smoothing: antialiased;
+  text-indent: 8000px;
+  padding-left: 8px;
+}
+
+.container > header nav a:hover:before {
+  color: #fff;
+}
+
+.icon-drop:before {
+  content: "\e000";
+}
+
+.icon-arrow-left:before {
+  content: "\f060";
+}
+
+@font-face {
+  font-family: 'ecoico';
+  src: url('../fonts/timelineicons/ecoico.eot');
+  src: url('../fonts/timelineicons/ecoico.eot?#iefix') format("embedded-opentype"), url('../fonts/timelineicons/ecoico.woff') format("woff"), url('../fonts/timelineicons/ecoico.ttf') format("truetype"), url('../fonts/timelineicons/ecoico.svg#ecoico') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Made with http://icomoon.io/ */
+
+.cbp_tmtimeline {
+  margin: 30px 0 0 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -10px;
+  }
+  > li {
+    .cbp_tmtime {
+      display: block;
+      width: 25%;
+      padding-right: 100px;
+      position: absolute;
+      span {
+        display: block;
+        text-align: right;
+        &:first-child {
+          font-size: 0.9em;
+          color: #bdd0db;
+        }
+        &:last-child {
+          font-size: 2.9em;
+          color: #3594cb;
+        }
+      }
+    }
+    &:nth-child(odd) .cbp_tmtime span:last-child {
+      color: #6cbfee;
+    }
+    .cbp_tmlabel {
+      margin: 0 0 15px 25%;
+      background: #3594cb;
+      color: #fff;
+      padding: 2em;
+      font-size: 1.2em;
+      font-weight: 300;
+      line-height: 1.4;
+      position: relative;
+      border-radius: 5px;
+    }
+    &:nth-child(odd) .cbp_tmlabel {
+      background: #6cbfee;
+    }
+    .cbp_tmlabel {
+      h2 {
+        margin-top: 0px;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      &:after {
+        right: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: #3594cb;
+        border-width: 10px;
+        top: 10px;
+      }
+    }
+    &:nth-child(odd) .cbp_tmlabel:after {
+      border-right-color: #6cbfee;
+    }
+    .cbp_tmicon {
+      width: 40px;
+      height: 40px;
+      font-family: 'ecoico';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      font-size: 1.4em;
+      line-height: 40px;
+      -webkit-font-smoothing: antialiased;
+      position: absolute;
+      color: #fff;
+      background: #46a4da;
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px #afdcf8;
+      text-align: center;
+      left: 20%;
+      top: 0;
+      margin: 0 0 0 -25px;
+    }
+  }
+}
+
+/* The line */
+
+/* The date/time */
+
+/* Right content */
+
+/* The triangle */
+
+/* The icons */
+
+.cbp_tmicon-phone:before {
+  content: "\e000";
+}
+
+.cbp_tmicon-screen:before {
+  content: "\e001";
+}
+
+.cbp_tmicon-mail:before {
+  content: "\e002";
+}
+
+.cbp_tmicon-earth:before {
+  content: "\e003";
+}
+
+/* Example Media Queries */
+@media screen and (max-width: 65.375em) {
+  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 47.2em) {
+  .cbp_tmtimeline {
+    &:before {
+      display: none;
+    }
+    > li {
+      .cbp_tmtime {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+        span {
+          text-align: left;
+        }
+      }
+      .cbp_tmlabel {
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+        &:after {
+          right: auto;
+          left: 20px;
+          border-right-color: transparent;
+          border-bottom-color: #3594cb;
+          top: -20px;
+        }
+      }
+      &:nth-child(odd) .cbp_tmlabel:after {
+        border-right-color: transparent;
+        border-bottom-color: #6cbfee;
+      }
+      .cbp_tmicon {
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0px;
+      }
+    }
+  }
+}
