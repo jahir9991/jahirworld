@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jahir world</title>
 
-    <link rel="shortcut icon" href="../favicon.ico">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/default.css"/>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
     <script src="Angularapp/main.js"></script>
 
 
 </head>
 <body ng-controller="portfolio" ng-init="myVar=''">
 <div class="container">
+
     <div id="splitlayout" class="splitlayout " ng-class="myVar">
         <div class="intro">
             <div class="side side-left">
@@ -58,6 +61,9 @@
 
                     <a class="list" ng-click="temp=template.blogs;myVar='open-right';" ng-href="#blogs">
                         <h1>Blogs </h1>
+                    </a>
+                    <a class="list" ng-click="temp=template.chat;myVar='open-right';" ng-href="#chat">
+                        <h1>Chat </h1>
                     </a>
                 </div>
                 <div class="overlay"></div>
