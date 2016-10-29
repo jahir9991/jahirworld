@@ -1,88 +1,347 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" ng-app="mainApp">
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jahir world</title>
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <script src="Angularapp/main.js"></script>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 
 
 </head>
-<body ng-controller="portfolio" ng-init="myVar=''">
-<div class="container">
+<body class="container-fluid">
+<!--<div id="world"></div>-->
 
-    <div id="splitlayout" class="splitlayout " ng-class="myVar">
-        <div class="intro">
-            <div class="side side-left">
-                <header class="codropsheader clearfix">
-                        <span>Curlybrace <span class="bp-icon bp-icon-about"
-                                               data-content="The Curlybrace is a team ."></span></span>
+<div class='coffie'></div>
 
 
-                    <nav>
-                        <h1 ng-click="myVar='open-left'">ABOUT ME </h1>
-                        <a class="bp-icon bp-icon-prev " href="#about"
-                           ng-click="myVar='open-left'" data-info="about ">
-                        </a>
+<div id='bgr' class="row">
+    <div class='wow animated col-md-6 '>
 
-                    </nav>
+    </div>
 
-                </header>
-                <div class="intro-content">
-                    <div class="profile"><img src="img/raju.jpg" alt="profile1"></div>
-                    <h1>MD JAHIR ALAM </h1>
-                    <h1>Web Developer</h1>
-                </div>
-                <div class="overlay"></div>
-            </div>
-            <div class="side side-right">
-                <div class="intro-content">
-
-
-                    <a class="list" ng-click="temp=template.experience;myVar='open-right';" ng-href="#experience">
-                        <h1> Experience </h1>
-                    </a>
-
-                    <a class="list" ng-click="temp=template.works;myVar='open-right';" ng-href="#works">
-                        <h1>Works</h1>
-                    </a>
-
-                    <a class="list" ng-click="temp=template.blogs;myVar='open-right';" ng-href="#blogs">
-                        <h1>Blogs </h1>
-                    </a>
-                    <a class="list" ng-click="temp=template.chat;myVar='open-right';" ng-href="#chat">
-                        <h1>Chat </h1>
-                    </a>
-                </div>
-                <div class="overlay"></div>
-            </div>
-        </div><!-- /intro -->
-        <div class="page page-right">
-            <div class="page-inner" ng-include="temp">
-                <!--////////template in ng include///////////////-->
-            </div><!-- /page-inner -->
-
-        </div><!-- /page-right -->
-        <div ng-include="'views/about.html'"></div>
-        <a href="#" class=" back back-right  " title="back to Home"
-           ng-click="myVar='close-left'">&rarr;</a>
-        <a href="#" class="back back-left" title="back to Home" ng-click="myVar='close-right'">&larr;</a>
-    </div><!-- /splitlayout -->
 
 </div>
 
+<div id='lake'>
+    <div id='sploutch'>
+        <div class='drop'></div>
+        <div id='ripples'>
+            <div class='ripple'></div>
+            <div class='ripple'></div>
+        </div>
+        <div id='splashes'>
+            <div class='splash'></div>
+            <div class='splash'></div>
+            <div class='splash'></div>
+        </div>
+    </div>
+</div>
+<div style="top: 150px !important; position: relative;">
+    <div id='raftHolder' class="animated  fadeInDown">
+        <div id='raft'>
+            <div id='raftTop'></div>
+            <div id='raftBottom'></div>
+        </div>
+    </div>
+
+
+    <div id='raftRipples' class="wow animated  fadeInLeftBig">
+        <div class='raftRipple'></div>
+        <div class='raftRipple'></div>
+    </div>
+
+
+    <div id='raftReflection'>
+        <div class='raftReflectionSegment'></div>
+        <div class='raftReflectionSegment'></div>
+        <div class='raftReflectionSegment'></div>
+    </div>
+</div>
+<div class="box wow animated fadeIn">
+
+    <div class="box__row row">
+        <div data-cell='1' class="box__row-cell col-md-6">
+
+            <div class="box__row-cell-info">
+                <p class='box__row-cell-info-title'>About</p>
+            </div>
+            <div class="box__row-cell-info">
+                <div class="box__row-cell-info-sign"></div>
+            </div>
+            <div class="box__row-cell-info box__row-cell-info--time">
+                <p>.....</p>
+            </div>
+            <div class="box__row-cell-info--full col-md-6">
+                <h1 class="box__row-cell-info--full-heading">jahir Alam Raju</h1>
+                <p class="box__row-cell-info--full-par">
+                    hihihihi
+                </p>
+            </div>
+        </div>
+
+        <div data-cell='2' class="box__row-cell col-md-6">
+            <div class="box__row-cell-info">
+                <p class=' box__row-cell-info-title'>PortFolio</p>
+            </div>
+            <div class="box__row-cell-info">
+                <div class="box__row-cell-info-sign"></div>
+            </div>
+
+            <div class="box__row-cell-info--full">
+                <h1 class="box__row-cell-info--full-heading">PortFolio</h1>
+                <p class="box__row-cell-info--full-par">
+                    Seriously though, it's over.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box__row row">
+        <div data-cell='3' class="box__row-cell col-md-6">
+
+            <div class="box__row-cell-info">
+                <p class=' box__row-cell-info-title'>Skills</p>
+            </div>
+            <div class="box__row-cell-info">
+                <div class="box__row-cell-info-sign"></div>
+            </div>
+            <div class="box__row-cell-info box__row-cell-info--time">
+
+            </div>
+            <div class="box__row-cell-info--full">
+                <h1 class="box__row-cell-info--full-heading">Skills</h1>
+                <p class="box__row-cell-info--full-par">
+                    Seriously though, it's over.
+                </p>
+            </div>
+        </div>
+
+        <div data-cell='4' class="box__row-cell col-md-6">
+
+            <div class="box__row-cell-info">
+                <p class=' box__row-cell-info-title'>Find Me</p>
+            </div>
+            <div class="box__row-cell-info">
+                <div class="box__row-cell-info-sign"></div>
+            </div>
+            <div class="box__row-cell-info box__row-cell-info--time">
+                <p>.....</p>
+            </div>
+            <div class="box__row-cell-info--full">
+                <h1 class="box__row-cell-info--full-heading">Phone: +8801740618846</h1>
+                <p class="box__row-cell-info--full-par">
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div data-content='1' class="box__content">
+        <div class="box__content-wrapper">
+            <div class="box__content-inner">
+                <div class="box__content-text">
+                    <h2 class='box__content-text-heading'>about</h2>
+                    <p class='box__content-text-par'>
+                        Suspendisse non orci porta, consectetur tellus in, gravida felis. Aenean vel posuere lacus.
+                        Quisque eget rutrum elit. In eu tortor eget velit scelerisque porttitor.
+                    </p>
+                    <p class='box__content-text-par'>
+                        Morbi nisl metus, hendrerit eget ante sed, consequat egestas urna. Quisque et rutrum ligula,
+                        eu
+                        rutrum ex. Nunc neque mauris, laoreet eu auctor vitae, rutrum molestie dolor. Pellentesque
+                        vel
+                        vulputate elit, quis rhoncus sapien.
+                    </p>
+                    <h2 class='box__content-text-heading'>SHOW NOTES</h2>
+                    <ul class='box__content-text-list'>
+                        <li class='box__content-text-item'>
+                            Vitae ultrices
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean vel
+                        </li>
+                        <li class='box__content-text-item'>
+                            Ut condimentum
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean metus
+                        </li>
+                        <li class='box__content-text-item'>
+                            Quisque sodales
+                        </li>
+                        <li class='box__content-text-item'>
+                            Accumsan metus
+                        </li>
+                    </ul>
+                    <h2 class='box__content-text-heading'>FOLLOW</h2>
+                    <a class='box__content-text-link' href="https://twitter.com/mrspok407" target='_blank'>mrspok407
+                        |
+                        @mrspok407</a><br>
+                    <a class='box__content-text-link' href="http://codepen.io/mrspok407/" target='_blank'>Checkout
+                        my
+                        other pens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-content='2' class="box__content">
+        <div class="box__content-wrapper">
+            <div class="box__content-inner">
+                <div class="box__content-text">
+                    <h2 class='box__content-text-heading'>SYNOPSIS - 44 MIN</h2>
+                    <p class='box__content-text-par'>
+                        Suspendisse non orci porta, consectetur tellus in, gravida felis. Aenean vel posuere lacus.
+                        Quisque eget rutrum elit. In eu tortor eget velit scelerisque porttitor.
+                    </p>
+                    <p class='box__content-text-par'>
+                        Morbi nisl metus, hendrerit eget ante sed, consequat egestas urna. Quisque et rutrum ligula,
+                        eu
+                        rutrum ex. Nunc neque mauris, laoreet eu auctor vitae, rutrum molestie dolor. Pellentesque
+                        vel
+                        vulputate elit, quis rhoncus sapien.
+                    </p>
+                    <h2 class='box__content-text-heading'>SHOW NOTES</h2>
+                    <ul class='box__content-text-list'>
+                        <li class='box__content-text-item'>
+                            Vitae ultrices
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean vel
+                        </li>
+                        <li class='box__content-text-item'>
+                            Ut condimentum
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean metus
+                        </li>
+                        <li class='box__content-text-item'>
+                            Quisque sodales
+                        </li>
+                        <li class='box__content-text-item'>
+                            Accumsan metus
+                        </li>
+                    </ul>
+                    <h2 class='box__content-text-heading'>FOLLOW</h2>
+                    <a class='box__content-text-link' href="https://twitter.com/mrspok407" target='_blank'>mrspok407
+                        |
+                        @mrspok407</a><br>
+                    <a class='box__content-text-link' href="http://codepen.io/mrspok407/" target='_blank'>Checkout
+                        my
+                        other pens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-content='3' class="box__content">
+        <div class="box__content-wrapper">
+            <div class="box__content-inner">
+                <div class="box__content-text">
+                    <h2 class='box__content-text-heading'>SYNOPSIS - 41 MIN</h2>
+                    <p class='box__content-text-par'>
+                        Suspendisse non orci porta, consectetur tellus in, gravida felis. Aenean vel posuere lacus.
+                        Quisque eget rutrum elit. In eu tortor eget velit scelerisque porttitor.
+                    </p>
+                    <p class='box__content-text-par'>
+                        Morbi nisl metus, hendrerit eget ante sed, consequat egestas urna. Quisque et rutrum ligula,
+                        eu
+                        rutrum ex. Nunc neque mauris, laoreet eu auctor vitae, rutrum molestie dolor. Pellentesque
+                        vel
+                        vulputate elit, quis rhoncus sapien.
+                    </p>
+                    <h2 class='box__content-text-heading'>SHOW NOTES</h2>
+                    <ul class='box__content-text-list'>
+                        <li class='box__content-text-item'>
+                            Vitae ultrices
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean vel
+                        </li>
+                        <li class='box__content-text-item'>
+                            Ut condimentum
+                        </li>
+                        <li class='box__content-text-item'>
+                            Aenean metus
+                        </li>
+                        <li class='box__content-text-item'>
+                            Quisque sodales
+                        </li>
+                        <li class='box__content-text-item'>
+                            Accumsan metus
+                        </li>
+                    </ul>
+                    <h2 class='box__content-text-heading'>FOLLOW</h2>
+                    <a class='box__content-text-link' href="https://twitter.com/mrspok407" target='_blank'>mrspok407
+                        |
+                        @mrspok407</a><br>
+                    <a class='box__content-text-link' href="http://codepen.io/mrspok407/" target='_blank'>Checkout
+                        my
+                        other pens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-content='4' class="box__content">
+        <div class="box__content-wrapper">
+            <div class="box__content-inner">
+                <div class="box__content-text">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box__close">
+        <!--  <span></span><br>
+         <span></span>
+         <span></span><br>
+         <span></span>
+         <span></span>
+         <span></span> -->
+    </div>
+    <div class="box__episodes animated slideInRight"><h5>Welcome to my world</h5></div>
+
+    <div class='box__title  animated zoomIn'>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="myImg img-responsive img-rounded">
+
+                </div>
+                <!--<img src="my.jpg" class="img-rounded img-responsive " >-->
+            </div>
+            <div class="col-md-6">
+                <h3 class='box__title-heading'>JAHIR<br>
+                    <span>ALAM</span></h3>
+                <p class='box__title-par'>web Developer</p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div id='forest'>
+    <div class='tree'></div>
+    <div class='tree'></div>
+    <div class='tree'></div>
+</div>
+
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src="bower_components/wow/dist/wow.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/OrbitControls.js"></script>
+
+
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>
